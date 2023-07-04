@@ -7,6 +7,7 @@ namespace TesteObraSoft.Models
     {
         public Contexto(DbContextOptions<Contexto> options) : base(options)
         {
+            Database.EnsureCreated();   
         }
 
         public DbSet<Pessoa> Pessoa { get; set; }

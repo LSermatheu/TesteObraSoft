@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
+using System.ComponentModel;
 
 namespace TesteObraSoft.Models
 {
@@ -41,10 +42,13 @@ namespace TesteObraSoft.Models
 
         [Column("EstadoCivil")]
         [Display(Name = "Estado Civil")]
+        [Required(ErrorMessage = "Campo {0} obrigatório.")]
         public string EstadoCivil { get; set; }
 
         [Column("Salario")]
         [Display(Name = "Salário")]
+        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
         public decimal Salario { get; set; }
     }
 }
