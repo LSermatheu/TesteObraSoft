@@ -1,7 +1,7 @@
 USE TESTE_OBRASOFT
 GO
 
-ALTER PROCEDURE ProcedureIncluir 
+CREATE PROCEDURE ProcedureIncluir 
 (
 	@nome VARCHAR(MAX)
 	,@endereco VARCHAR(MAX)
@@ -28,7 +28,7 @@ BEGIN
 END	
 GO
 
-ALTER PROCEDURE ProcedureAlterar
+CREATE PROCEDURE ProcedureAlterar
 (
 	@id INT
 	,@nome VARCHAR(MAX)

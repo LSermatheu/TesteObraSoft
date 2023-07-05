@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TesteObraSoft.Models;
 
@@ -10,9 +11,11 @@ using TesteObraSoft.Models;
 namespace TesteObraSoft.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20230704222432_Correcao dos limites de caracteres nos campos")]
+    partial class Correcaodoslimitesdecaracteresnoscampos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,8 +59,8 @@ namespace TesteObraSoft.Migrations
 
                     b.Property<string>("Sexo")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)")
                         .HasColumnName("Sexo");
 
                     b.Property<string>("TelefoneCelular")

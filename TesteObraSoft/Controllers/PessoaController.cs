@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -57,6 +58,19 @@ namespace TesteObraSoft.Controllers
         // GET: Pessoa/Create
         public IActionResult Create()
         {
+            //ViewBag.EstadoCivil = new List<string> { "Solteiro", "Casado", "União estável", "Divorciado", "Viúvo" };
+
+            List<string> EC = new List<string>()
+            {
+                "Solteiro",
+                "Casado",
+                "União estável",
+                "Divorciado",
+                "Viúvo"
+            };
+
+            ViewBag.EC = EC;
+
             return View();
         }
 

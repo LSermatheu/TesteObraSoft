@@ -37,6 +37,7 @@ namespace TesteObraSoft.Models
 
         [Column("Sexo")]
         [Display(Name = "Sexo")]
+        [MaxLength(10)]
         [Required(ErrorMessage = "Campo {0} obrigatório.")]
         public string Sexo { get; set; }
 
